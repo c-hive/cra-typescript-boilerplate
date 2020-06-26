@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext ts,tsx,js,jsx --no-error-on-unmatched-pattern"
   },
@@ -40,7 +40,10 @@
   "engines": {
     "npm": ">=6.6"
   },
-  "pre-commit": [],
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "//devDependencies": {
     "eslint*": "code style",
     "pre-commit": "run scripts before each commit",
