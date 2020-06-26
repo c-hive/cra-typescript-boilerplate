@@ -1,3 +1,9 @@
+// The following packages are part of `react-scripts` and should not be added as a depndency explicitly: https://github.com/typescript-eslint/typescript-eslint/issues/2193
+// eslint
+// @typescript-eslint/eslint-plugin
+// @typescript-eslint/parser
+// eslint-plugin-react
+// eslint-plugin-import
 module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
