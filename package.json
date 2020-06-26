@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint . --no-error-on-unmatched-pattern"
+    "lint": "eslint . --ext ts,tsx,js,jsx --no-error-on-unmatched-pattern"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,8 +40,7 @@
   "engines": {
     "npm": ">=6.6"
   },
-  "pre-commit": [
-  ],
+  "pre-commit": [],
   "//devDependencies": {
     "eslint*": "code style",
     "pre-commit": "run scripts before each commit",
