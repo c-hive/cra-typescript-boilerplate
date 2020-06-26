@@ -41,11 +41,21 @@ module.exports = {
           "`with` is disallowed in strict mode because it makes code impossible to predict and optimize.",
       },
     ],
-    "import/no-anonymous-default-export": "error",
+    "import/no-anonymous-default-export": "error", // https://github.com/c-hive/guides/blob/a82e1b37ef662c8f8d7485793f99970080f40dca/js/best-practices.md#name-functions-when-exporting
     "import/no-extraneous-dependencies": [
       "error",
       {
-        devDependencies: ["**/*.test.js", "src/setupTests.js"],
+        devDependencies: ["**/*.test.ts", "**/*.test.tsx"],
+      },
+    ],
+    "import/extensions": [ // https://stackoverflow.com/a/59268871/2771889
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       },
     ],
   },
@@ -55,6 +65,11 @@ module.exports = {
   settings: {
     react: {
       version: "detect",
+    },
+    "import/resolver": { // https://stackoverflow.com/a/55280867/2771889
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
     },
   },
 };
