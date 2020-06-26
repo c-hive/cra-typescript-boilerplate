@@ -41,8 +41,6 @@
     "npm": ">=6.6"
   },
   "pre-commit": [
-    // "lint",
-    // "test"
   ],
   "//devDependencies": {
     "eslint*": "code style",
