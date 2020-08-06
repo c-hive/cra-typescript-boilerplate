@@ -87,6 +87,7 @@ module.exports = {
     "import/resolver": { // https://stackoverflow.com/a/55280867/2771889
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
+        paths: ["src"],
       },
     },
   },
