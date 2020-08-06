@@ -1,9 +1,3 @@
-// The following packages are part of `react-scripts` and should not be added as a depndency explicitly: https://github.com/typescript-eslint/typescript-eslint/issues/2193
-// eslint
-// @typescript-eslint/eslint-plugin
-// @typescript-eslint/parser
-// eslint-plugin-react
-// eslint-plugin-import
 module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
@@ -12,9 +6,28 @@ module.exports = {
     "airbnb-base",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "plugin:jest/recommended",
-    "plugin:jest/style",
-    "plugin:@typescript-eslint/recommended",
+  ],
+  overrides: [
+    {
+      files: [
+        "src/**/*.test.js",
+        "src/**/*.test.jsx",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+      ],
+      extends: [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:testing-library/react",
+      ],
+      env: {
+        jest: true,
+      },
+    },
+    {
+      files: ["**/*.ts", "**/*.tsx"],
+      extends: ["plugin:@typescript-eslint/recommended"],
+    },
   ],
   rules: {
     "linebreak-style": [
@@ -58,6 +71,10 @@ module.exports = {
         "ts": "never",
         "tsx": "never"
       },
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { varsIgnorePattern: "_", argsIgnorePattern: "_" },
     ],
   },
   env: {
